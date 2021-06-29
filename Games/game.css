@@ -21,6 +21,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     background-color: white;
+    user-select: none;
+    --webkit-user-select: none;
 
 }
 
@@ -45,7 +47,8 @@ background-color: blue;
     align-items:center;
     width:500px ;
     margin: 0 auto;
-    background-color: white;
+    background-color: white;user-select: none;
+    --webkit-user-select: none;
 }
 
 .name-game {
@@ -70,7 +73,8 @@ background-color: blue;
     padding-bottom: 15px;
     padding-top: 10px;
     font-size:20px;
-    font-weight:bold;
+    font-weight:bold;user-select: none;
+    --webkit-user-select: none;
 }
 
 .first {
@@ -83,7 +87,8 @@ background-color: blue;
     background-color: white ;
     color: #FF0066 ;
     display: flex;
-    justify-content: center;
+    justify-content: center;user-select: none;
+    --webkit-user-select: none;
 }
 
 .restart {
@@ -96,9 +101,11 @@ background-color: blue;
     border : 2px solid #FF0066 ;
     width: 140px;
     height:40px ;
-    background-color: pink;
+    background-color: pink;user-select: none;
+    --webkit-user-select: none;
 }
 
 .unload {
-    display: none;
+    display: none;user-select: none;
+    --webkit-user-select: none;
 }
