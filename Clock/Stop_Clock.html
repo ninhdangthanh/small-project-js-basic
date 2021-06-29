@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Clock</title>
+    <style> 
+        * {
+    padding: 0 ;
+    margin: 0 ;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:  #333;
+    color: #17D4FE;
+}
+
+.wrapper {
+    width: 400px;
+    height:  200px;
+    background-color: black ;
+    margin : 0 auto;
+}
+
+h1, h2, p {
+    text-align: center ;
+    padding-bottom: 20px
+}
+
+.btn {
+    display: flex ;
+    justify-content: center ;
+}
+
+button {
+    margin: 0 10px;
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    color:white ;
+    background-color: #17D4FE ;
+    border : none;
+    outline : none;
+}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Stopwatch</h1>
+        <h2>Vanilla JavaScript Stopwatch</h2>
+        <p> <span id="minute">00</span> <span>:</span>
+            <span id="seconds">00</span> <span>:</span>
+            <span id="tens">00</span>
+        </p>
+        <div class="btn">
+            <button id="button-start">Start</button>
+            <button id="button-stop">Stop</button>
+            <button id="button-reset">Reset</button>
+        </div>
+    </div> 
+
+    <script>
+        var minute = 0
+var seconds = 0
+var tens = 0
+
+
+const miBtn = document.querySelector('#minute')
+const seBtn = document.querySelector('#seconds')
+const teBtn = document.querySelector('#tens')
+
+const start = document.querySelector('#button-start')
+const stopp = document.querySelector('#button-stop')
+const reset = document.querySelector('#button-reset')
+
+var Interval
+
+var isStart = false
+
+
+    start.onclick = function () {
+        clearInterval(Interval)
+        Interval = setInterval(play, 10)
+    }
+    
+    stopp.onclick = function () {
+        clearInterval(Interval)
+    }
+
+    reset.onclick = function () {
+        clearInterval(Interval)
+        teBtn.innerHTML = '00';
+        seBtn.innerHTML = '00';
+        miBtn.innerHTML = '00';
+    }
+    
+    
+    
+  
+function play() {
+        tens ++
+        if (tens == 100) {
+            tens = 0
+            seconds ++
+            if(seconds == 60) {
+                seconds = 0
+                minute ++
+            }
+        }
+        
+        teBtn.innerHTML = tens < 10 ? `0${tens}` : tens;
+        seBtn.innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+        miBtn.innerHTML = minute < 10 ? `0${minute}` : minute;
+}
+
+    </script>
+</body>
+</html>

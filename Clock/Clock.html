@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+        .app {
+            display:inline-flex ;
+            background-color: black;
+            color :aqua;
+            font-size: 80px;
+            padding:40px;
+            margin: 0 auto
+        }
+        .time {
+            display:flex
+        }
+        .session {
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="time">
+            <span class="h"></span> <span>:</span>
+            <span class="m"></span> <span>:</span>
+            <span class="s"></span>
+        </div>
+        <div class="session">
+
+        </div>
+    </div>
+
+    <script>
+    
+    var session = "AM";
+    
+    setInterval(() => {
+        var date = new Date();
+        var h = date.getHours(); 
+        if(h>12) {
+            session = 'PM'
+        }
+        if (h > 12) {
+            h = h - 12
+            if(h < 10) {
+                h = `0${h}`
+            }
+        }
+        var m = date.getMinutes(); 
+        var s = date.getSeconds(); 
+        document.querySelector('.h').innerHTML = h
+        document.querySelector('.m').innerHTML = m < 10 ? `0${m}` : m
+        document.querySelector('.s').innerHTML = s < 10 ? `0${s}` : s
+        document.querySelector('.session').innerHTML = session
+    }, 1);
+        
+    </script>
+</body>
+</html>

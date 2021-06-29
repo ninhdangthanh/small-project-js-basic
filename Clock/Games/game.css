@@ -1,0 +1,75 @@
+* {
+    padding: 0 ;
+    margin: 0 ;
+    box-sizing: border-box;
+}
+
+body {
+    align-items: center;
+    background-color: #333;
+}
+
+.app {
+    width: 500px;
+    padding: 50px;
+    padding-top:30px ;
+    padding-bottom: 20px;
+    margin: 0 auto 0 ;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+
+}
+
+.item {
+    width: 25%;
+    height: 100px ;
+    background-color: 	#FF3399;
+    text-align: center;
+    line-height: 100px;
+    padding: 2px;
+    background-clip: content-box;
+    font-size: 60px 
+}
+
+.blue {
+background-color: blue;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width:500px ;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.name-game {
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: #FF0066;
+}
+
+.title p {
+    color: #FF0066;
+    font-size:20px;
+}
+.kyluc {
+    display:flex;
+    width: 500px;
+    justify-content: center;
+    margin: 0 auto;
+    background-color:white;
+    color: #FF0066;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.first {
+    padding-right: 4px;
+}
