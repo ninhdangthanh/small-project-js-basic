@@ -78,7 +78,7 @@ items.forEach(function(item) {
         clearInterval(Interval)
         Interval = setInterval(play, 10)
         item.innerHTML = item.getAttribute('id')
-        item.classList.add('blue')
+        item.classList.add('red')
         checked(item)
     }
 })
@@ -95,7 +95,7 @@ function checked(item) {
             items.forEach(function(item) {
                 if(item.getAttribute('id') == this.arrId[0]) {
                     item.innerHTML = ""
-                    item.classList.remove('blue')
+                    item.classList.remove('red')
                 }
             })  
             this.arrId.shift()
@@ -104,10 +104,22 @@ function checked(item) {
     
     if(this.arrId.length == 2) {
         if(this.arrId[0] == this.arrId[1]) {
-            // console.log('OK')
+            console.log('OK')
             ++iscorrect ;
-            this.arrId = []
-            if(iscorrect == 8) {
+            setTimeout(() => {
+                items.forEach(function(item) {
+                    if(item.getAttribute('id') == this.arrId[0]) {
+                        item.classList.remove('red')
+                        item.classList.add('blue')
+                    }
+                    if(item.getAttribute('id') == this.arrId[1]) {
+                        item.classList.remove('red')
+                        item.classList.add('blue')
+                    }
+                })
+                this.arrId = []
+            }, 150);
+            if(iscorrect >= 8) {
                 clearInterval(Interval)
                 reStart.classList.remove('unload')
                 timmer = minute*60*60 + seconds*60 + tens
@@ -126,11 +138,11 @@ function checked(item) {
                     items.forEach(function(item) {
                         if(item.getAttribute('id') == this.arrId[0]) {
                             item.innerHTML = ""
-                            item.classList.remove('blue')
+                            item.classList.remove('red')
                         }
                         if(item.getAttribute('id') == this.arrId[1]) {
                             item.innerHTML = ""
-                            item.classList.remove('blue')
+                            item.classList.remove('red')
                         }
                     })
                 this.arrId = []
