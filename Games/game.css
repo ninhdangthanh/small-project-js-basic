@@ -40,7 +40,11 @@ body {
 }
 
 .blue {
-background-color: blue;
+background-color: blue !important;
+}
+
+.red {
+    background-color: red;
 }
 
 .title {
@@ -115,10 +119,6 @@ background-color: blue;
     display: none;
     user-select: none;
     --webkit-user-select: none;
-}
-
-.red {
-    background-color: red;
 }
 
 @media (max-width:740px) {
