@@ -1,4 +1,4 @@
-// Tạo mảng thành phần  
+// Tạo mảng thành phần  // location.reload();
 var ar1 = [];
 var ar2 = [];
 
@@ -21,7 +21,7 @@ var endGame = true
 var reStart = document.querySelector('.reload')
 reStart.classList.add('unload')
 reStart.onclick = function () {
-   // location.reload();
+   
 }
 
 
