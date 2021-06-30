@@ -1,4 +1,4 @@
-// Tạo mảng thành phần  // location.reload();
+// Tạo mảng thành phần  
 var ar1 = [];
 var ar2 = [];
 
@@ -21,7 +21,7 @@ var endGame = true
 var reStart = document.querySelector('.reload')
 reStart.classList.add('unload')
 reStart.onclick = function () {
-   
+    location.reload();
 }
 
 
@@ -89,10 +89,22 @@ var timer = 0
 function checked(item) {
     var itemid = item.getAttribute('id')
     this.arrId.push(itemid)
-    console.log(this.arrId)
-    if(this.arrId.length >= 2) {
+    // console.log(this.arrId) 
+    if(this.arrId.length > 2) {
+        for(var i = 0; this.arrId.length != 2 ; ++ i) {
+            items.forEach(function(item) {
+                if(item.getAttribute('id') == this.arrId[0]) {
+                    item.innerHTML = ""
+                    item.classList.remove('blue')
+                }
+            })  
+            this.arrId.shift()
+        }
+    }
+    
+    if(this.arrId.length == 2) {
         if(this.arrId[0] == this.arrId[1]) {
-            console.log('OK')
+            // console.log('OK')
             ++iscorrect ;
             this.arrId = []
             if(iscorrect == 8) {
@@ -109,7 +121,7 @@ function checked(item) {
                 }
             }
         }else {
-            console.log('Sai')
+            // console.log('Sai')
                 setTimeout(() => {
                     items.forEach(function(item) {
                         if(item.getAttribute('id') == this.arrId[0]) {
@@ -122,7 +134,7 @@ function checked(item) {
                         }
                     })
                 this.arrId = []
-                }, 500);
+                }, 250);
         }
     }
 }
