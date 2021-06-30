@@ -21,7 +21,7 @@ var endGame = true
 var reStart = document.querySelector('.reload')
 reStart.classList.add('unload')
 reStart.onclick = function () {
-    location.reload();
+   // location.reload();
 }
 
 
