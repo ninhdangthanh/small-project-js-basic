@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Game</title>
+    <style>
+        
+        h1 {
+            margin: 12px 0 4px;
+            opacity: 1!important;
+            position :absolute;
+            top: -9px;
+            z-index: 10;
+        }
+        .game {
+            opacity: 1!important;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        video
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        h1, .score-box, .restart {
+            left: 50% ;
+            transform: translateX(-50%)
+        }
+        .restart {
+            cursor: pointer;
+            color: blue;
+            z-index: 10;
+            top: 300px;
+            position: absolute;
+            width: 140px;
+            height: 60px;
+            border-radius: 16px;
+            background-color: lawngreen;
+            font-size: 30px;
+            font-weight: bold;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .show {
+            display: flex!important;
+        }
+        body{
+            font-family: cursive;
+            color: white;
+            overflow: hidden;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        .score-box {
+            display: flex;
+            justify-content:center;
+            font-size: 20px;
+            margin-bottom: 6px;
+            position: absolute;
+            z-index: 10;
+            top: 50px;
+        }
+        #score {
+            padding-left: 8px;
+        }
+        #canvas {
+            position: relative;
+            left: 50%;
+            top: 90px;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <video src="./Waves - 71122.mp4" muted loop autoplay></video>
+    <h1>Tetris Game</h1>
+    <div class="score-box">
+        Score : <div id="score"> 0</div>
+    </div>
+    <div class="restart">Restart</div>
+    <canvas id="canvas" width="300" height="600"></canvas>
+</body>
+<script src="shape.js"></script>
+<script src="index.js"></script>
+</html>
